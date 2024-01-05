@@ -6,7 +6,7 @@ import Footer from "./recyclables/Footer";
 
 function App() {
   return (
-    <section className="relative">
+    <section className="relative bg-cream block items-center h-fit lg:h-screen justify-between">
       <Navbar />
       <ToastContainer />
       <Navigation />

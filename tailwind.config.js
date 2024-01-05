@@ -8,11 +8,10 @@ export default {
     extend: {
       colors: {
         cream: '#D1D1D6',
-        sky: '#289AAB',
-        dull: '#303233'
+        dull: '#303233',
       }
     },
   },
-  plugins: [],
+  plugins: [require("daisyui")],
 }
 

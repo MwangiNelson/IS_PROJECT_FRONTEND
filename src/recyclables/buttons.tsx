@@ -52,7 +52,7 @@ export const IconButton: React.FC<IconButtonProps> = ({
       onClick={() => onClick && onClick()}
       className={`flex items-center w-fitjustify-center px-3 ${
         text == "" ? "ps-3" : "ps-7"
-      } py-2 gap-5  border-${backgroundColor} rounded-lg hover:bg-${backgroundColor}/50 transition-all duration-300 bg-${backgroundColor}`}
+      } py-2 gap-5 rounded-lg hover:${backgroundColor}/50 transition-all duration-300 ${backgroundColor}`}
     >
       {text == "" ? null : (
         <span className={`${textStyle} text-lg font-medium`}>{text}</span>
