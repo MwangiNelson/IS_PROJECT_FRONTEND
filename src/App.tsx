@@ -6,7 +6,10 @@ import Footer from "./recyclables/Footer";
 
 function App() {
   return (
-    <section className="relative bg-cream block items-center h-fit lg:h-screen justify-between">
+    <section
+      style={{ background: `url(${"/images/ellipse.png"}), #D1D1D6` }}
+      className="relative bg-cream flex flex-col items-center h-fit lg:h-screen justify-between"
+    >
       <Navbar />
       <ToastContainer />
       <Navigation />

@@ -8,6 +8,7 @@ export default {
     extend: {
       colors: {
         cream: '#D1D1D6',
+        ghost: '#E0E8EE',
         dull: '#303233',
       }
     },

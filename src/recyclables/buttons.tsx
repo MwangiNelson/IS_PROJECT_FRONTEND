@@ -1,10 +1,11 @@
 import React from "react";
 import { TbCircleArrowRightFilled } from "react-icons/tb";
+import { BsStars } from "react-icons/bs";
 
 interface ButtonProps {
   text: string;
   background: string;
-  rounded: boolean;
+  styles:string;
   transparent: boolean;
   onClick?: (() => void) | null;
 }
@@ -12,21 +13,30 @@ interface ButtonProps {
 export const AppButton: React.FC<ButtonProps> = ({
   text,
   background,
-  rounded,
   transparent,
   onClick,
 }) => {
-  const borderRadius = rounded ? "99px" : "0px";
   const backgroundColor = transparent ? "transparent" : background;
-  const buttonStyles = `px-5 py-2 border-white h-fit border flex flex-row justify-center items-center text-md border-1 text-white hover:text-orange-950 hover:border-orange-950 hover:in-expo hover:duration-300 ${backgroundColor}`;
+  const buttonStyles = `px-5 py-2 border-white h-fit border flex flex-row justify-center items-center text-md border-1 hover:text-orange-950 hover:border-purple-950 hover:in-expo hover:duration-300 ${backgroundColor}`;
 
   return (
-    <button
-      onClick={() => onClick && onClick()}
-      className={buttonStyles}
-      style={{ borderRadius }}
-    >
+    <button onClick={() => onClick && onClick()} className={buttonStyles}>
       {text}
+    </button>
+  );
+};
+
+export const MagicButton: React.FC<ButtonProps> = ({
+  text,
+  onClick,
+  styles
+}) => {
+  const buttonStyles = `px-5 py-2 btn-animated gap-4 text-cream h-fit border flex flex-row justify-center items-center text-md border-1 hover:text-orange-950 hover:border-purple-950 hover:in-expo hover:duration-300 ${styles}`;
+
+  return (
+    <button onClick={() => onClick && onClick()} className={buttonStyles}>
+      {text}
+      <BsStars />
     </button>
   );
 };
@@ -52,7 +62,7 @@ export const IconButton: React.FC<IconButtonProps> = ({
       onClick={() => onClick && onClick()}
       className={`flex items-center w-fitjustify-center px-3 ${
         text == "" ? "ps-3" : "ps-7"
-      } py-2 gap-5 rounded-lg hover:${backgroundColor}/50 transition-all duration-300 ${backgroundColor}`}
+      } py-2 gap-5 rounded-lg hover:${backgroundColor}/50 transition-all duration-300  ${backgroundColor}`}
     >
       {text == "" ? null : (
         <span className={`${textStyle} text-lg font-medium`}>{text}</span>

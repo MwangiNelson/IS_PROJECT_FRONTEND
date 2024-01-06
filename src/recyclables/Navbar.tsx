@@ -1,10 +1,17 @@
 import { IconButton } from "./buttons";
 import { GiAstronautHelmet, GiHamburgerMenu } from "react-icons/gi";
 import { MdOutlineSupervisedUserCircle } from "react-icons/md";
+import { Link, useLocation } from "react-router-dom";
 
 function Navbar() {
+  const location = useLocation();
+  const path = location.pathname;
   return (
-    <nav className="flex flex-row bg-cream py-4 border-b-[1px] border-b-slate-400 justify-between px-10 items-center">
+    <nav
+      className={`w-full ${
+        path == "/chat" ? "hidden" : "flex"
+      } flex-row bg-cream py-4 border-b-[1px] border-b-slate-400 justify-between px-10 items-center`}
+    >
       <div className="lg:w-2/12 md:w-4/12 w-1/2">
         <img
           src="/images/nutri_logo.png"
@@ -34,12 +41,14 @@ function Navbar() {
             text="Start Chat"
             textStyle="text-white"
           />
-          <IconButton
-            Icon={MdOutlineSupervisedUserCircle}
-            backgroundColor="bg-blue-600"
-            text="Sign Up"
-            textStyle="text-white"
-          />
+          <Link to="/auth">
+            <IconButton
+              Icon={MdOutlineSupervisedUserCircle}
+              backgroundColor="bg-blue-600"
+              text="Sign Up"
+              textStyle="text-white"
+            />
+          </Link>
         </div>
       </div>
     </nav>
